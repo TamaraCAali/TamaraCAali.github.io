@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/bs4/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+        <!-- <select id="sort" onchange="onSortBy(this.value)">
+                <option>Sort By</option>
+                <option value="name">A-Z</option>
+                <option value="price">Price</option>
+            </select> -->
+        <div class="library-container">
+    <!--modal update -->
+    <div class="modal book-add">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="onCloseAddBook() ">&times;</button>
+                    <input type="text" class="bookName form-control" placeholder="Book Title">
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="bookPrice form-control" placeholder="Price">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" onclick="readAndAddNewBook()">yes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.modal update -->
+
+    <!-- modal-details -->
+
+
+    <div class="modal book-details">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" onclick="onCloseBookDetails()"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="book-title"></h4>
+                    <h2 class="book-price"></h2>
+                    <div class="rating">
+                        <div><span onclick="updateRating('+')">&plus;</span></div>
+                        <h5 class="rate">0</h5>
+                        <input type="hidden" id="bookId">
+                        <div><span onclick="updateRating('-')">&minus;</span></div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <img class="book-img">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" onclick="onCloseBookDetails()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /.modal -->
+    <div class="wrapp">
+        <div class="head flash">
+            <h1>Welcome to my catbrary</h1>
+            <img class="rounded img-thumbnail mx-auto d-block d-sm-none d-md-block" src="img/giphy.gif" width="400" alt="">
+        </div>
+        <div class="container">
+            <div class="container">
+                <button class="bookAdding" onclick="addBookDetails()">Add a book</button>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Actions</th>
+                            <th scope="col">Image</th>
+                        </tr>
+                    </thead>
+                    <tbody class="book-list">
+                        <tr>
+                            <th scope="row">book id</th>
+                            <td>book name</td>
+                            <td>book price</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <ul class="pagination">
+                    <li class="page-item" onclick="goToPage('-')"><a class="page-link">Previous</a></li>
+                    <div class="pages">
+                    <!-- <li class="page-item" onclick="onNextPage('1')"><a class="page-link">1</a></li>
+                    <li class="page-item" onclick="onNextPage('2')"><a class="page-link">2</a></li>
+                    <li class="page-item" onclick="onNextPage('3')"><a class="page-link">3</a></li> -->
+                </div>
+                    <li class="page-item" onclick="goToPage('+')"><a class="page-link">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/book-service.js"></script>
+        <script src="js/app.js"></script>
+</body>
+
+</html>

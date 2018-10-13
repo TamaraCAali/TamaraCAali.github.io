@@ -1,0 +1,152 @@
+/* body{
+    box-sizing: border-box;
+} */
+body{
+    height: 100%;
+}
+.library-container{
+    display: flex;
+    margin-top: 40px;
+}
+.wrapp{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(6, 87, 49, 0.568);
+    width:70%;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+}
+
+h1{
+    text-align: center;
+}
+.head{
+    margin-bottom: 20px;
+}
+
+.flash {
+    animation-name: flash;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+ }
+  
+ @keyframes flash {
+    from {color: rgb(23, 161, 97);}
+    to {color: rgb(164, 70, 219);}
+ }
+
+
+
+ .modal{
+    display: none;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    float: left;
+}
+
+.modal-header{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.book-img{
+    width: 261px;
+    height: 400px;
+}
+
+.bookAdding{
+    background:none;
+     border:none; 
+     padding:0;
+     color:rgb(14, 75, 144);
+     text-decoration:underline;
+     cursor:pointer; 
+     font-size: 20px;
+}
+
+.modal-update{
+    display: none;
+}
+
+.price-update{
+    background:none;
+     border:none; 
+     padding:0;
+     color:lightblue;
+     cursor:pointer; 
+     font-size: 10px;
+
+}
+
+.update-price{
+    visibility: hidden;
+}
+
+.new-price{
+    height: 20px;
+    width: 60px;
+}
+
+.new-price-btn{
+    height: 20px;
+    width: 60px;
+    background:none;
+     border:none; 
+     padding:0;
+     color:lightblue;
+     cursor:pointer; 
+     font-size: 15px;
+
+}
+
+.rating{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 90px;
+    height: 35px;
+    justify-content: space-between;
+}
+
+.rating>*{
+    font-size: 20px;
+    line-height: 35px; 
+}
+
+.rating div{
+    cursor: pointer;
+    background-color: lightblue;
+    width: 25px
+}
+.pagination {
+    justify-content: center;
+    /* background-color: green; */
+    height: 50px;
+    margin-top: 3px;
+
+}
+
+th,td {
+    
+    vertical-align: 0% !important;
+  }
+div .container{
+    display: block;
+    height: 400px;
+    height: 340px;
+}
+
+.pages{
+    display: flex ;
+    /* flex-direction: row; */
+}

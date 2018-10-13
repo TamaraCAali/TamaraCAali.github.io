@@ -1,0 +1,143 @@
+
+body{
+    /* background-color: lightgreen */
+    background-image: linear-gradient(rgba(85, 200, 85, 0.712),rgba(62, 21, 97, 0.575));
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+}
+h1{
+    text-align: center;
+    margin-bottom: 60px;
+    color: rgba(0, 0, 139, 0.733);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.board{
+    border: 1px solid green;
+}
+
+td{
+    width: 50px; 
+    height: 45px; 
+    border: 2px solid lightgrey;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+/* text unselectable to prevent user from seeing neighs count. Might not need it afterall */
+
+
+.hidden{
+    background-color: rgba(141, 24, 44, 0.233);
+    /* color: black; */
+}
+
+.shown{
+    color: darkblue;
+    font-size: 23px;
+}
+
+.gameOver{
+    /* border: 1px solid orange; */
+    visibility: hidden;
+    color: darkred;
+    height: 30px; 
+    text-align: center;
+    font-size: 25px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.level select {
+    font-family: Arial;
+    overflow: hidden;
+    /* width: 50px; */
+    height: 30px;  
+    background-color: rgba(0, 80, 100, 0.582);
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0.397);
+  }
+
+  .markedCount{
+      /* width: 140px !important; */
+      font-size: 20px !important;
+
+  }
+
+
+  .updates4user{
+    position: fixed;
+    border-bottom: 3px solid rgba(38, 10, 197, 0.445);
+}
+
+.updates4user > * {
+    width: 70px;
+    height: 50px;
+    /* border: 1px solid blue; */
+    float: left;
+    text-align: center;
+    margin-left: 70px;
+    margin-right: 70px;
+    font-size: 20px;
+    line-height: 50px;  
+
+}
+
+.emoji{
+    font-size: 40px;
+}
+
+.mat{
+    /* display: flex; */
+    display: inline-block;
+    margin: auto;
+}
+
+
+.container{
+    margin:auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container > *{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+button{
+    background-color: rgba(12, 122, 89, 0.329);
+    color: black;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.623);
+    cursor: pointer;
+    font-size: 18px;
+}
+button:focus {outline:0;}
+select:focus {outline:0;}
+
+.bestScore{
+    width: 250px;
+    height: 20px;
+    font-size: 18px;
+    /* border: 1px solid red; */
+}
+/* 
+ul{
+    display: inline-block;
+
+} */
+
+ 
+li {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 80px;
+  }
