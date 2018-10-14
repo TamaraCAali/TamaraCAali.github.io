@@ -12,7 +12,8 @@
 </head>
 
 <body onload="init()">
-        <div class="library-container">
+        <!-- <div class="library-container"> -->
+          
     <!--modal update -->
     <div class="modal book-add">
         <div class="modal-dialog" role="document">
@@ -63,14 +64,15 @@
     <!-- /.modal -->
     
     <div class="wrapp">
-            <nav> nav</nav>
+            <nav>
+                    <div class="langs_div">
+                            <select class="langs" onchange="onSetLang(this.value)">
+                                    <option value="en">🇺🇸 English</option>
+                                    <option value="he">🇮🇱 עברית</option>
+                                </select>
+                            </div>
+                        </nav>
         <div class="head flash">
-            <div class="langs_div">
-                <select class="langs" onchange="onSetLang(this.value)">
-                        <option value="en">🇺🇸 English</option>
-                        <option value="he">🇮🇱 עברית</option>
-                    </select>
-                </div>
             <h1 data-trans="title">Welcome to my catbrary</h1>
             <img class="rounded img-thumbnail mx-auto d-block d-sm-none d-md-block" src="img/giphy.gif" width="400" alt="">
         </div>

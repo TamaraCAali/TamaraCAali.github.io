@@ -37,6 +37,7 @@ function createBook(name, price) {
 
 function getBooks() {
     var fromBookIdx = gCurrPageNo * PAGE_SIZE;
+    console.log('from to',fromBookIdx ,fromBookIdx + PAGE_SIZE );
     return gBooks.slice(fromBookIdx, fromBookIdx + PAGE_SIZE);
 }
 
@@ -70,6 +71,8 @@ function updateBook(bookId, newPrice) {
 function goNextPage(pageNum) {
     var pageNumber = +pageNum; // 0 1
     gCurrPageNo = pageNumber - 1; /// 0 1
+    //
+    renderBooks();
 }
 
 function goToPage(operator) {
@@ -80,6 +83,7 @@ function goToPage(operator) {
         gCurrPageNo++;
     }
     renderBooks();
+    renderPagination(PAGE_SIZE);
 }
 
 function onSetLang(lang) {

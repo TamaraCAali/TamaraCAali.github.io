@@ -3,6 +3,7 @@
 } */
 body{
     height: 100%;
+    margin-top: 30px;
 }
 body.rtl {
     direction: rtl;
@@ -20,18 +21,26 @@ body.rtl .bookAdding {
     margin-top: 40px;
 }
 /* 
-td.buttons>*{
-    display: flex;
-    justify-content: space-between;
+.buttons{
+
+        display: flex;
+        border: none;
+        justify-content: space-around;
+
 } */
 
+button{
+    outline: none;
+}
 
 
 .wrapp{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background-color: rgba(6, 87, 49, 0.568);
+    /* background-color: rgba(6, 87, 49, 0.568);  */
+    background-color: rgba(247, 241, 241, 0.671);
+
     width:70%;
     margin: 0 auto;
     justify-content: center;
@@ -163,7 +172,7 @@ h1{
     justify-content: center;
     /* background-color: green; */
     height: 50px;
-    margin-top: 3px;
+    margin-top: 7px;
 
 }
 
@@ -187,15 +196,32 @@ div .container button{
 }
 
 .langs{
-    margin-top: 30px;
+    /* margin-top: 11px; */
+    /* margin-left: 5px; */
     width: 110px;
     height: 30px;
-    background-color: lightgray;
+    background-color: black;
+    color: white;
+    border: none;
     float: left;
-    /* text-align: center; */
-    /* line-height: 25px; */
+    border-radius: 50%;
 }
 
-.langs_div{
-    float: left;
+nav{
+    display: flex;
+    justify-content: flex-start;
+    background-color: black;
+    height:30px;
+}
+
+/* button:focus {outline:0;} */
+
+.btn-sm{
+    /* margin-left: 15px; */
+    margin: 5%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    width: 60px;
+    height: 30px;
+    padding: 1px;
 }

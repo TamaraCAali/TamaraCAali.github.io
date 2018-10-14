@@ -6,12 +6,13 @@ var gPriceUpdateClick = 0;
 function init() {
     createBooks();
     renderBooks();
-    renderPagination(PAGE_SIZE);
+    renderPagination(6);  //// needs a function (page-size)
 }
 
 function renderBooks() {
     //<th scope="row">${index+1}</th>
     var books = getBooks();
+
     var strHtmls = books.map(function (book) {
         var bookPrice = formatPrice(book.price);
         return `
@@ -24,7 +25,7 @@ function renderBooks() {
         <button class="new-price-btn" onclick="readAndUpdateBook('${book.id}')">✓</button>
         </div>
         </td>
-        <div class="buttons">
+        <div class="buttons btn-group">
         <td class="buttons">
             <button class="btn btn-primary btn-sm" onclick="onBookDetails('${book.id}')" data-trans="read">${getTrans('read')}</button>
             <button class="btn btn-warning btn-sm update-btn" onclick="updateBookPrice()" data-trans="update">${getTrans('update')}</button>
@@ -42,7 +43,6 @@ function renderBooks() {
     $('.book-list').html(strHtmls.join(''));
 
 }
-
 
 function renderPagination(numOfPages) {
     var strHtml = '';
@@ -79,7 +79,7 @@ function onCloseBookDetails() {
 
 function onNextPage(pageNum) {
     goNextPage(pageNum);
-    renderBooks();
+    // renderBooks();
 }
 
 
