@@ -91,7 +91,7 @@ function readAndAddNewBook() {
     renderBooks();
     
 }
-
+//opens modal 
 function addBookDetails() {
     $('.book-add').show();
     var bookName = $('.bookName').val();
