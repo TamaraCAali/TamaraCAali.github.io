@@ -141,8 +141,9 @@ function priceConversion(priceInUsd) {
 }
 
 
-function formatPrice(price) {
-    console.log(price)
+function formatPrice(priceInUsd) {
+    var price = priceConversion(priceInUsd);
+    //console.log(price)
     return (gCurrLang === 'en') ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price) :
         new Intl.NumberFormat('he-IL', { style: 'currency', currency: 'ILS' }).format(price);
 }

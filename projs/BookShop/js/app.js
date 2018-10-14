@@ -13,10 +13,9 @@ function renderBooks() {
     //<th scope="row">${index+1}</th>
     var books = getBooks();
     var strHtmls = books.map(function (book) {
-        var bookPrice1 = priceConversion(book.price);
-        console.log(bookPrice1);
-        var bookPrice = formatPrice(bookPrice1);
-        console.log(bookPrice);
+        var bookPrice = formatPrice(book.price);
+        // var bookPrice1 = priceConversion(book.price);
+       // var bookPrice = formatPrice(bookPrice1);
         return `
         <tr>
         <th scope="row">${book.id}</th>
@@ -67,11 +66,9 @@ function onBookDetails(BookId) {
     var book = getBookById(BookId);
     var $bookDetails = $('.book-details');
     $bookDetails.find('h4').text(book.name);
-    $bookDetails.find('h2').text('$' + book.price);
+   // $bookDetails.find('h2').text('$' + book.price);
+    $bookDetails.find('h2').text(formatPrice(book.price));
     $bookDetails.find('.book-img').attr("src", `img/${book.name}.png`);
-
-    // var $bookImg = `img/${book.name}.png`;
-    // $('.book-img').attr("src", $bookImg);
     $('.book-details').fadeIn();
     $('#bookId').val(book.id);
     $('.rate').text(book.rating);
