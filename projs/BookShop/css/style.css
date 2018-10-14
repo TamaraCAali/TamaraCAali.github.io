@@ -4,10 +4,29 @@
 body{
     height: 100%;
 }
+body.rtl {
+    direction: rtl;
+}
+/* body.rtl .library-container{
+    float:right;
+
+} */
+
+body.rtl .bookAdding {
+    float: right;
+} 
 .library-container{
     display: flex;
     margin-top: 40px;
 }
+/* 
+td.buttons>*{
+    display: flex;
+    justify-content: space-between;
+} */
+
+
+
 .wrapp{
     box-sizing: border-box;
     display: flex;
@@ -27,7 +46,7 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .flash {
@@ -60,6 +79,7 @@ h1{
 .modal-header{
     display: flex;
     flex-direction: column;
+    align-items: center;
 
 }
 
@@ -94,6 +114,8 @@ h1{
 
 .update-price{
     visibility: hidden;
+    /* display: none; */
+    /* background: red; */
 }
 
 .new-price{
@@ -148,9 +170,22 @@ div .container{
     display: block;
     height: 400px;
     height: 340px;
+    text-align: center;
+}
+div .container button{
+    float: left;
 }
 
 .pages{
     display: flex ;
     /* flex-direction: row; */
+}
+
+.langs{
+    margin: 5px;
+    width: 110px;
+    height: 30px;
+    background-color: lightgray;
+    /* text-align: center; */
+    /* line-height: 25px; */
 }

@@ -83,3 +83,10 @@ function goToPage(operator){
     // console.log('toPage',toPage);
     renderBooks();
 }
+
+
+
+function onSetLang(lang) {
+    setLang(lang);
+    // renderBooks();
+}

@@ -13,21 +13,25 @@ function renderBooks() {
     //<th scope="row">${index+1}</th>
     var books = getBooks();
     var strHtmls = books.map(function (book, index) {
+        var bookPrice1 = priceConversion(book.price);
+        //console.log('bookPrice1',bookPrice1);
+        // console.log('bookPrice1',bookPrice1);
+        var bookPrice = formatPrice(bookPrice1);
         return `
         <tr>
         <th scope="row">${book.id}</th>
         <td>${book.name}</td>
-        <td class"price"><span>$${book.price}</span>
+        <td class"price"><span data-trans="price">${bookPrice}</span>
         <div class="update-price" id="'${book.id}'">
-        <input class="new-price" type="text" placeholder="Price">
+        <input class="new-price" type="text" placeholder="price" data-trans="price">
         <button class="new-price-btn" onclick="readAndUpdateBook('${book.id}')">✓</button>
         </div>
         </td>
         <div class="buttons">
-        <td>
-            <button class="btn btn-primary btn-sm" onclick="onBookDetails('${book.id}')">Read</button>
-            <button class="btn btn-warning btn-sm update-btn" onclick="updateBookPrice()">Update</button>
-            <button class="btn btn-danger btn-sm" onclick="onDeleteBook('${book.id}')">Delete</button>
+        <td class="buttons">
+            <button class="btn btn-primary btn-sm" onclick="onBookDetails('${book.id}')" data-trans="read">Read</button>
+            <button class="btn btn-warning btn-sm update-btn" onclick="updateBookPrice()" data-trans="update">Update</button>
+            <button class="btn btn-danger btn-sm" onclick="onDeleteBook('${book.id}')" data-trans="delete">Delete</button>
         </td>
     </div>
     <td>
