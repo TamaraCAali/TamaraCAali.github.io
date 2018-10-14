@@ -43,7 +43,6 @@ function renderBooks() {
     $('.book-list').html(strHtmls.join(''));
 
 }
-
 function renderPagination(numOfPages) {
     var strHtml = '';
     for (var i = 0; i < numOfPages; i++) {
