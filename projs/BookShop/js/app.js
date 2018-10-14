@@ -14,8 +14,6 @@ function renderBooks() {
     var books = getBooks();
     var strHtmls = books.map(function (book) {
         var bookPrice = formatPrice(book.price);
-        // var bookPrice1 = priceConversion(book.price);
-       // var bookPrice = formatPrice(bookPrice1);
         return `
         <tr>
         <th scope="row">${book.id}</th>
@@ -46,12 +44,12 @@ function renderBooks() {
 }
 
 
-function renderPagination(numOfPages){
+function renderPagination(numOfPages) {
     var strHtml = '';
     for (var i = 0; i < numOfPages; i++) {
         strHtml +=
-        `
-        <li class="page-item" onclick="onNextPage('${i+1}')"><a class="page-link">${i+1}</a></li>
+            `
+        <li class="page-item" onclick="onNextPage('${i + 1}')"><a class="page-link">${i + 1}</a></li>
         `
     }
     document.querySelector('.pages').innerHTML = strHtml;
@@ -66,7 +64,7 @@ function onBookDetails(BookId) {
     var book = getBookById(BookId);
     var $bookDetails = $('.book-details');
     $bookDetails.find('h4').text(book.name);
-   // $bookDetails.find('h2').text('$' + book.price);
+    // $bookDetails.find('h2').text('$' + book.price);
     $bookDetails.find('h2').text(formatPrice(book.price));
     $bookDetails.find('.book-img').attr("src", `img/${book.name}.png`);
     $('.book-details').fadeIn();
@@ -90,7 +88,7 @@ function readAndAddNewBook() {
     addBook(book);
     $('.book-add').hide();
     renderBooks();
-    
+
 }
 //opens modal 
 function addBookDetails() {
@@ -115,13 +113,13 @@ function readAndUpdateBook(bookId) {
 }
 
 function updateBookPrice() {
-    if(gPriceUpdateClick === 0){
+    if (gPriceUpdateClick === 0) {
         $('.update-price').css('visibility', 'visible');
         gPriceUpdateClick = 1;
     }
-    else{ 
-    $('.update-price').css('visibility', 'hidden');
-    gPriceUpdateClick = 0;
+    else {
+        $('.update-price').css('visibility', 'hidden');
+        gPriceUpdateClick = 0;
 
     }
     var newPrice = $('.new-price').val();
@@ -133,7 +131,25 @@ function updateRating(operator) {
     if (operator === '+' && book.rating < 10) book.rating++;
     else if (operator === '-' && book.rating > 0) book.rating--;
     $('.rate').text(book.rating);
+    saveToStorage(KEY_BOOKS, gBooks);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function onSortBy(sortStatus) {

@@ -76,12 +76,6 @@ var gTrans = {
         en: 'Image',
         he: 'תמונה'
     },
-    // book_price:{
-    //     en: $('span').text(),
-    //     he: (+$('span').val())*4,
-
-    // },
-
 }
 
 function doTrans() {
@@ -124,7 +118,6 @@ function setLang(lang) {
         document.body.classList.remove('rtl')
     }
     doTrans();
-    //renderBooks();
 }
 
 
@@ -143,7 +136,6 @@ function priceConversion(priceInUsd) {
 
 function formatPrice(priceInUsd) {
     var price = priceConversion(priceInUsd);
-    //console.log(price)
     return (gCurrLang === 'en') ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price) :
         new Intl.NumberFormat('he-IL', { style: 'currency', currency: 'ILS' }).format(price);
 }
