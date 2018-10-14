@@ -37,12 +37,12 @@ td.buttons>*{
     justify-content: center;
     align-content: center;
 }
-
+/* 
 h1{
     text-align: center;
-}
+} */
 .head{
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,6 +56,11 @@ h1{
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-play-state: running;
+    height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
  }
   
  @keyframes flash {
@@ -182,10 +187,15 @@ div .container button{
 }
 
 .langs{
-    margin: 5px;
+    margin-top: 30px;
     width: 110px;
     height: 30px;
     background-color: lightgray;
+    float: left;
     /* text-align: center; */
     /* line-height: 25px; */
+}
+
+.langs_div{
+    float: left;
 }

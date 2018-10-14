@@ -12,18 +12,12 @@
 </head>
 
 <body onload="init()">
-<!-- 
-    <select class="langs" onchange="onSetLang(this.value)">
-        <option value="en">🇺🇸 English</option>
-        <option value="he">🇮🇱 עברית</option>
-    </select> -->
-        
         <div class="library-container">
     <!--modal update -->
     <div class="modal book-add">
         <div class="modal-dialog" role="document">
             <div class="modal-content ">
-                <div class="modal-header">
+                <div class="modal-header add">
                     <button type="button" class="close" onclick="onCloseAddBook() ">&times;</button>
                     <input type="text" class="bookName form-control" placeholder="Book Title" data-trans="add_book_name_placeholder">
                 </div>
@@ -40,8 +34,7 @@
     <!-- /.modal update -->
 
     <!-- modal-details -->
-
-
+   
     <div class="modal book-details">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -68,13 +61,16 @@
 
 
     <!-- /.modal -->
+    
     <div class="wrapp">
+            <nav> nav</nav>
         <div class="head flash">
-
+            <div class="langs_div">
                 <select class="langs" onchange="onSetLang(this.value)">
                         <option value="en">🇺🇸 English</option>
                         <option value="he">🇮🇱 עברית</option>
                     </select>
+                </div>
             <h1 data-trans="title">Welcome to my catbrary</h1>
             <img class="rounded img-thumbnail mx-auto d-block d-sm-none d-md-block" src="img/giphy.gif" width="400" alt="">
         </div>
@@ -96,7 +92,6 @@
                             <th scope="row">book id</th>
                             <td>book name</td>
                             <td>book price</td>
-
                         </tr>
                     </tbody>
                 </table>
@@ -105,9 +100,6 @@
                 <ul class="pagination">
                     <li class="page-item" onclick="goToPage('-')"><a class="page-link" data-trans="prev">Previous</a></li>
                     <div class="pages">
-                    <!-- <li class="page-item" onclick="onNextPage('1')"><a class="page-link">1</a></li>
-                    <li class="page-item" onclick="onNextPage('2')"><a class="page-link">2</a></li>
-                    <li class="page-item" onclick="onNextPage('3')"><a class="page-link">3</a></li> -->
                 </div>
                     <li class="page-item" onclick="goToPage('+')"><a class="page-link" data-trans="next">Next</a></li>
                 </ul>
@@ -123,3 +115,4 @@
 </body>
 
 </html>
+

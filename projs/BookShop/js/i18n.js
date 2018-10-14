@@ -84,10 +84,6 @@ var gTrans = {
 
 }
 
-
-
-
-
 function doTrans() {
     var els = document.querySelectorAll('[data-trans]');
 
@@ -128,18 +124,14 @@ function setLang(lang) {
         document.body.classList.remove('rtl')
     }
     doTrans();
+    //renderBooks();
 }
-
-
 
 
 function usdToIls(usd) {
     return usd * 3.62;
 }
 
-// function ilsToUsd(ils) {
-//     return ils / 3.62;
-// }
 
 function priceConversion(priceInUsd) {
     var bookPrice;
@@ -147,14 +139,10 @@ function priceConversion(priceInUsd) {
     else bookPrice = usdToIls(priceInUsd);
     return bookPrice;
 }
-// console.log(usdToIls(20));
 
 
 function formatPrice(price) {
     console.log(price)
     return (gCurrLang === 'en') ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price) :
         new Intl.NumberFormat('he-IL', { style: 'currency', currency: 'ILS' }).format(price);
-    // /return new Intl.NumberFormat('he-IL',{ style: 'currency', currency: 'ILS' }).format(num);
-
-    // return new Intl.NumberFormat().format(num);
 }

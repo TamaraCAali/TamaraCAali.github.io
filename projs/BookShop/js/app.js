@@ -12,16 +12,16 @@ function init() {
 function renderBooks() {
     //<th scope="row">${index+1}</th>
     var books = getBooks();
-    var strHtmls = books.map(function (book, index) {
+    var strHtmls = books.map(function (book) {
         var bookPrice1 = priceConversion(book.price);
-        //console.log('bookPrice1',bookPrice1);
-        // console.log('bookPrice1',bookPrice1);
+        console.log(bookPrice1);
         var bookPrice = formatPrice(bookPrice1);
+        console.log(bookPrice);
         return `
         <tr>
         <th scope="row">${book.id}</th>
         <td>${book.name}</td>
-        <td class"price"><span data-trans="price">${bookPrice}</span>
+        <td class="price"><span>${bookPrice}</span>
         <div class="update-price" id="'${book.id}'">
         <input class="new-price" type="text" placeholder="price" data-trans="price">
         <button class="new-price-btn" onclick="readAndUpdateBook('${book.id}')">✓</button>
@@ -29,9 +29,9 @@ function renderBooks() {
         </td>
         <div class="buttons">
         <td class="buttons">
-            <button class="btn btn-primary btn-sm" onclick="onBookDetails('${book.id}')" data-trans="read">Read</button>
-            <button class="btn btn-warning btn-sm update-btn" onclick="updateBookPrice()" data-trans="update">Update</button>
-            <button class="btn btn-danger btn-sm" onclick="onDeleteBook('${book.id}')" data-trans="delete">Delete</button>
+            <button class="btn btn-primary btn-sm" onclick="onBookDetails('${book.id}')" data-trans="read">${getTrans('read')}</button>
+            <button class="btn btn-warning btn-sm update-btn" onclick="updateBookPrice()" data-trans="update">${getTrans('update')}</button>
+            <button class="btn btn-danger btn-sm" onclick="onDeleteBook('${book.id}')" data-trans="delete">${getTrans('delete')}</button>
         </td>
     </div>
     <td>
@@ -45,7 +45,6 @@ function renderBooks() {
     $('.book-list').html(strHtmls.join(''));
 
 }
-
 
 
 function renderPagination(numOfPages){
@@ -66,19 +65,20 @@ function onDeleteBook(bookId) {
 
 function onBookDetails(BookId) {
     var book = getBookById(BookId);
-    // console.log('book', book);
     var $bookDetails = $('.book-details');
     $bookDetails.find('h4').text(book.name);
     $bookDetails.find('h2').text('$' + book.price);
-    var $bookImg = `img/${book.name}.png`;
-    $('.book-img').attr("src", $bookImg);
-    $('.book-details').show();
+    $bookDetails.find('.book-img').attr("src", `img/${book.name}.png`);
+
+    // var $bookImg = `img/${book.name}.png`;
+    // $('.book-img').attr("src", $bookImg);
+    $('.book-details').fadeIn();
     $('#bookId').val(book.id);
     $('.rate').text(book.rating);
 }
 
 function onCloseBookDetails() {
-    $('.book-details').hide();
+    $('.book-details').fadeOut();
 }
 
 

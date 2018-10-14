@@ -88,5 +88,5 @@ function goToPage(operator){
 
 function onSetLang(lang) {
     setLang(lang);
-    // renderBooks();
+    renderBooks();
 }
